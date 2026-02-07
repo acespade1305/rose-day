@@ -12,51 +12,76 @@
             justify-content:center;
             align-items:center;
             background: linear-gradient(135deg,#ff4d6d,#ff8fa3);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color:white;
             text-align:center;
+            overflow:hidden;
         }
 
-        .box{
-            background: rgba(0,0,0,0.2);
-            padding:40px;
-            border-radius:20px;
-            width:70%;
+        .card{
+            background: rgba(0,0,0,0.25);
+            padding:50px;
+            border-radius:25px;
+            width:75%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h1{
             font-size:45px;
+            margin-bottom:10px;
+        }
+
+        h2{
+            font-weight: normal;
+            margin-top:0;
+            color:#ffe6ea;
         }
 
         p{
-            font-size:20px;
+            font-size:18px;
+            line-height:1.6;
         }
 
         button{
-            margin-top:20px;
-            padding:12px 20px;
+            margin-top:25px;
+            padding:14px 25px;
             font-size:18px;
             border:none;
-            border-radius:10px;
+            border-radius:12px;
             background:white;
             color:#ff4d6d;
             cursor:pointer;
+            transition:0.3s;
         }
 
         button:hover{
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px white;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(20px);}
+            to{opacity:1; transform:translateY(0);}
         }
     </style>
 </head>
 
 <body>
 
-    <div class="box">
-        <h1>Happy Rose Day 🌹 My Love</h1>
+    <div class="card">
+        <h1>Happy Rose Day 🌹</h1>
 
+        <!-- CHANGE HER NAME HERE -->
+        <h2>For My Beautiful Urvi❤️</h2>
+
+        <!-- CHANGE MESSAGE HERE -->
         <p>
-            Every rose reminds me of your smile ❤️<br>
-            Thank you for coming into my life.
+            Like a rose spreads fragrance,  
+            you spread love and happiness in my life.  
+            Every moment with you is magical ✨  
+            I am lucky to have you.
         </p>
 
         <button onclick="surprise()">Click for Surprise 🎁</button>
@@ -64,7 +89,7 @@
 
     <script>
         function surprise(){
-            alert("I love you today, tomorrow, and forever ❤️🌹");
+            alert("No matter what happens, I will always choose YOU ❤️🌹");
         }
     </script>
 
