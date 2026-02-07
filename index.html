@@ -8,17 +8,18 @@
             margin:0;
             padding:0;
             height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
             background: linear-gradient(135deg,#ff4d6d,#ff8fa3);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             color:white;
             text-align:center;
             overflow:hidden;
         }
 
         .card{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
             background: rgba(0,0,0,0.25);
             padding:50px;
             border-radius:25px;
@@ -28,21 +29,8 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        h1{
-            font-size:45px;
-            margin-bottom:10px;
-        }
-
-        h2{
-            font-weight: normal;
-            margin-top:0;
-            color:#ffe6ea;
-        }
-
-        p{
-            font-size:18px;
-            line-height:1.6;
-        }
+        h1{ font-size:45px; margin-bottom:10px; }
+        h2{ font-weight: normal; color:#ffe6ea; }
 
         button{
             margin-top:25px;
@@ -62,8 +50,21 @@
         }
 
         @keyframes fadeIn{
-            from{opacity:0; transform:translateY(20px);}
-            to{opacity:1; transform:translateY(0);}
+            from{opacity:0; transform:translate(-50%,-40%);}
+            to{opacity:1; transform:translate(-50%,-50%);}
+        }
+
+        /* floating hearts */
+        .heart{
+            position:absolute;
+            bottom:-10px;
+            font-size:20px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float{
+            from{ transform: translateY(0); opacity:1; }
+            to{ transform: translateY(-100vh); opacity:0; }
         }
     </style>
 </head>
@@ -73,15 +74,14 @@
     <div class="card">
         <h1>Happy Rose Day 🌹</h1>
 
-        <!-- CHANGE HER NAME HERE -->
-        <h2>For My Beautiful Lady❤️</h2>
+        <!-- EDIT NAME -->
+        <h2>For My Beautiful Lady ❤️</h2>
 
-        <!-- CHANGE MESSAGE HERE -->
+        <!-- EDIT MESSAGE -->
         <p>
-            Like a rose spreads fragrance,  
-            you spread love and happiness in my life.  
-            Every moment with you is magical ✨  
-            I am lucky to have you.
+            You are my favorite place, my safest home,  
+            and the best part of every day.  
+            I am truly lucky to have you ✨
         </p>
 
         <button onclick="surprise()">Click for Surprise 🎁</button>
@@ -89,10 +89,24 @@
 
     <script>
         function surprise(){
-            alert("No matter what happens, I will always choose YOU ❤️🌹");
+            alert("I promise to stand with you in every situation ❤️🌹");
         }
+
+        // create floating hearts
+        setInterval(()=>{
+            const heart = document.createElement("div");
+            heart.className="heart";
+            heart.style.left=Math.random()*100+"vw";
+            heart.innerHTML="❤️";
+            document.body.appendChild(heart);
+
+            setTimeout(()=>heart.remove(),6000);
+        },500);
     </script>
 
 </body>
 </html>
+
+
+
 
